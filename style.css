@@ -66,6 +66,20 @@ h5,
 h6 {
   font-weight: 700;
   text-transform: uppercase;
+  color: var(--color-light);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
 }
 
 a button,
@@ -110,13 +124,58 @@ p:not([class]):not(:last-child) {
 }
 
 .button.transparent {
+  position: relative;
   height: var(--input-height);
   padding-right: 80px;
   background-color: transparent;
   border: var(--border);
+  color: var(--color-light);
+}
+
+.button.transparent::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 100%;
+  aspect-ratio: 1;
+  background: url(img/arrow-right.svg) center/70% no-repeat;
+  border: var(--border);
+  border-radius: 50%;
 }
 
 .button:hover {
+  background-color: var(--color-light-gray);
+}
+
+.button.transparent:hover {
+  color: var(--color-light);
+  background-color: var(--color-dark-alternate);
+}
+
+.input {
+  width: 100%;
+  height: var(--input-height);
+  padding-inline: 25px;
+  color: var(--color-light);
+  background-color: transparent;
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--border-radius);
+}
+
+.input::-moz-placeholder {
+  color: var(--color-light-gray);
+}
+
+.input::placeholder {
+  color: var(--color-light-gray);
+}
+
+.input:hover {
+  color: var(--color-light);
+}
+
+.input:focus {
+  color: var(--color-dark);
   background-color: var(--color-light-gray);
 }
 
@@ -141,9 +200,13 @@ p:not([class]):not(:last-child) {
 }
 
 .title-medium {
-  font-size: 40px;
+  font-size: clamp(20px, 2.08vw, 40px);
   line-height: 1.3;
-  color: var(--color-light);
+}
+
+.title-big {
+  font-size: clamp(24px, 3.125vw, 60px);
+  line-height: 1.2;
 }
 
 .backdrop-title {
@@ -171,6 +234,12 @@ p:not([class]):not(:last-child) {
   font-size: 2.8em;
   color: transparent;
   -webkit-text-stroke: 1px var(--color-light-gray);
+}
+
+.backdrop-title.centered::after {
+  top: -0.55em;
+  left: 50%;
+  translate: -50% 0;
 }
 
 .header-menu-list {
@@ -312,11 +381,11 @@ p:not([class]):not(:last-child) {
 }
 
 .motivation-card-img {
-  margin-block: -60px;
+  margin-block: -20px;
 }
 
 .motivation-card-body {
-  padding-left: 35px;
+  padding-left: 276px;
 }
 
 .motivation-card-title:not(:last-child) {
@@ -331,6 +400,154 @@ p:not([class]):not(:last-child) {
   margin-bottom: 36px;
 }
 
+.tranning-types {
+  max-width: 1920px;
+  margin-inline: auto;
+  padding-top: 70px;
+  padding-bottom: 120px;
+  position: relative;
+  background-color: var(--color-dark);
+}
+
+.tranning-types-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 60px;
+}
+
+.tranning-types-item {
+  --TranningTypesBckg: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 32px;
+  background: url(img/brake-point.svg) 100% 0/var(--TranningTypesBckg) no-repeat;
+  padding-top: var(--TranningTypesBckg);
+}
+
+.tranning-types-title {
+  font-size: 16px;
+}
+
+.join-us-video {
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+}
+
+.join-us-video-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 150px 30px;
+  background: url(img/joinusbackg.jpg) center/cover no-repeat var(--color-dark-alternate);
+}
+
+.join-us-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+  width: 200px;
+  aspect-ratio: 1;
+  background-color: transparent;
+  border: var(--border);
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-light);
+}
+
+.join-us-play-button::after {
+  content: "";
+  width: 20px;
+  aspect-ratio: 1;
+  background: url(img/arrow-right.svg) center/contain no-repeat;
+  transition-duration: var(--transition-duration);
+}
+
+.join-us-play-button:hover {
+  color: var(--color-dark);
+  background-color: var(--color-light-gray);
+}
+
+.join-us-play-button:hover::after {
+  filter: invert(1);
+}
+
+.join-us-body {
+  padding-bottom: 150px;
+}
+
+.join-us-title {
+  position: relative;
+  font-size: clamp(64px, 9.37vw, 180px);
+  line-height: 1;
+  text-align: center;
+  margin-top: -0.4em;
+}
+
+.join-us-title::after {
+  content: "";
+  display: inline-block;
+  width: 0.7em;
+  aspect-ratio: 1;
+  background: url(img/Vector.svg) center/contain no-repeat;
+  scale: 1 -1;
+  margin-left: 0.14em;
+}
+
+.join-us-title:not(:last-child) {
+  margin-bottom: 130px;
+}
+
+.join-us-form-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 7px;
+}
+
+.join-us-form-subtitle {
+  font-size: clamp 14px, 1.042vw, 20px;
+  text-transform: uppercase;
+  color: var(--color-light);
+  text-align: center;
+}
+
+.join-us-form-subtitle:not(:last-child) {
+  margin-bottom: 52px;
+}
+
+.join-us-form-input {
+  max-width: 400px;
+}
+
+.join-us-form-body {
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+
+@media (max-width: 1919px) {
+  .motivation-card-img {
+    margin-block: -20px;
+  }
+}
+@media (max-width: 1280px) {
+  .tranning-types-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 @media (max-width: 1024px) {
   .header {
     flex-wrap: wrap;
@@ -341,6 +558,20 @@ p:not([class]):not(:last-child) {
   .header-menu {
     order: 1;
     flex-basis: 100%;
+  }
+  .motivation-card-img {
+    max-width: 30%;
+    height: auto;
+    padding-block: 50px;
+  }
+  .motivation-card-body {
+    padding-left: 80px;
+  }
+  .join-us-body {
+    padding-bottom: 80px;
+  }
+  .join-us-title:not(:last-child) {
+    margin-bottom: 80px;
   }
 }
 @media (max-width: 767px) {
@@ -363,5 +594,45 @@ p:not([class]):not(:last-child) {
   }
   .banner-info::before {
     margin-right: 10px;
+  }
+  .motivation-card,
+  .motivation-item:nth-child(even) .motivation-card {
+    flex-direction: column-reverse;
+  }
+  .motivation-card-img {
+    max-width: 60%;
+  }
+  .motivation-card {
+    padding-block: 30px;
+    row-gap: 30px;
+  }
+  .motivation-card-body {
+    padding-left: 30px;
+  }
+  .motivation-card-dscrption:not(last-child) {
+    margin-bottom: 20px;
+  }
+  .tranning-types-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  .tranning-types-item {
+    --TranningTypesBckg: 50px;
+    row-gap: 10px;
+  }
+  .tranning-types-img {
+    max-width: 120px;
+  }
+  .join-us-play-button {
+    width: 140px;
+  }
+  .join-us-title:not(:last-child) {
+    margin-bottom: 40px;
+  }
+  .join-us-form-body {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
   }
 }/*# sourceMappingURL=style.css.map */
