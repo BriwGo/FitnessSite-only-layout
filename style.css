@@ -58,6 +58,11 @@ body {
   padding-inline: var(--content-padding-x);
 }
 
+.container-wide {
+  max-width: 1920px;
+  margin-inline: auto;
+}
+
 h1,
 h2,
 h3,
@@ -228,16 +233,17 @@ p:not([class]):not(:last-child) {
   content: attr(data-title);
   position: absolute;
   z-index: -1;
-  top: -0.45em;
+  top: -0.3em;
   left: -0.6em;
   font-family: var(--font-family-accent);
   font-size: 2.8em;
+  line-height: 1;
   color: transparent;
   -webkit-text-stroke: 1px var(--color-light-gray);
 }
 
 .backdrop-title.centered::after {
-  top: -0.55em;
+  top: -0.25em;
   left: 50%;
   translate: -50% 0;
 }
@@ -435,6 +441,10 @@ p:not([class]):not(:last-child) {
   height: auto;
 }
 
+.join-us {
+  background-color: var(--color-dark-alternate);
+}
+
 .join-us-video-wrapper {
   position: relative;
   display: flex;
@@ -520,6 +530,7 @@ p:not([class]):not(:last-child) {
   text-transform: uppercase;
   color: var(--color-light);
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .join-us-form-subtitle:not(:last-child) {
@@ -535,6 +546,36 @@ p:not([class]):not(:last-child) {
   justify-content: center;
   -moz-column-gap: 20px;
        column-gap: 20px;
+}
+
+.locate {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.locate-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px, 15px;
+  text-align: center;
+}
+
+.locate-title:not(:last-child) {
+  margin-bottom: 14px;
+}
+
+.locate-description {
+  max-width: 490px;
+}
+
+.locate-img {
+  height: auto;
+}
+
+.locate-description:not(:last-child) {
+  margin-bottom: 37px;
 }
 
 @media (max-width: 1919px) {
@@ -572,6 +613,10 @@ p:not([class]):not(:last-child) {
   }
   .join-us-title:not(:last-child) {
     margin-bottom: 80px;
+  }
+  .locate {
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 @media (max-width: 767px) {
@@ -634,5 +679,11 @@ p:not([class]):not(:last-child) {
     flex-direction: column;
     align-items: center;
     row-gap: 20px;
+  }
+  .locate-body {
+    padding-block: 40px;
+  }
+  .locate-description:not(:last-child) {
+    margin-bottom: 20px;
   }
 }/*# sourceMappingURL=style.css.map */
