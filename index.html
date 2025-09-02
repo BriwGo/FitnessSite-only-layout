@@ -158,7 +158,7 @@
           <header class="join-us-form-header">
             <h3 class="join-us-form-title title-big
  backdrop-title centered" data-title="Go!">Start Here</h3>
-            <p class="join-us-form-subtitle">fill the form below to start your journey </p>
+            <p class="join-us-form-subtitle section-description">fill the form below to start your journey </p>
           </header>
           <div class="join-us-form-body">
 
@@ -174,24 +174,103 @@
         </form>
       </div>
     </section>
-<section class="locate container-wide">
-  <img src="img/locatemap.jpg" alt="branches on the map" class="locate-img"
-  width="960"
-  height="600">
-  <div class="locate-body">
-    <h2 class="locate-title title-medium backdrop-title centered"
-    data-title="look">Find us near you</h2>
-<div class="locate-description">
-  <p>Nec suas signiferumque id. An eum labore commodo principes. Usu diam noluisse cu, nam adipisci</p>
-</div>
-<a href="" class="locate-btn button transparent">View More</a>
-  </div>
-</section>
+    <section class="locate container-wide">
+      <img src="img/locatemap.jpg" alt="branches on the map" class="locate-img" width="960" height="600">
+      <div class="locate-body">
+        <h2 class="locate-title title-medium backdrop-title centered" data-title="look">Find us near you</h2>
+        <div class="locate-description">
+          <p>Nec suas signiferumque id. An eum labore commodo principes. Usu diam noluisse cu, nam adipisci</p>
+        </div>
+        <a href="" class="locate-btn button transparent">View More</a>
+      </div>
+    </section>
     <section class="family">
-    <header class="family-header container">
-      <h2 class="family-title title-big backdrop-title centered"></h2>
-      <div class="family-description"><p></p></div>
-    </header>
-    <div class="family-body container-wide "></div>
+      <header class="family-header container">
+        <h2 class="family-title title-big backdrop-title centered
+      " data-title="Part">be a part of our fit family</h2>
+        <div class="family-description section-description">
+          <p>Training helps you think and feel better. join us!</p>
+        </div>
+      </header>
+      <div class="family-body container-wide ">
+        <img src="img/family1.jpg" alt="training people" width="414" height="479" class="family-image">
+        <img src="img/family2.jpg" alt="training people" width="744" height="479" class="family-image">
+        <img src="img/family3.jpg" alt="training people" width="396" height="479" class="family-image">
+        <img src="img/family4.jpg" alt="training people" width="396" height="479" class="family-image">
+        <img src="img/family5.jpg" alt="training people" width="414" height="479" class="family-image">
+      </div>
+    </section>
+    <section class="calcule ">
+      <div class="calcule-inner container">
+        <div class="calcule-body">
+          <h2 class="calcule-title title-medium backdrop-title " data-title="BMI">Input your BMI</h2>
+          <div class="calcule-description" data-title="look">
+           <p>Duo graece ponderum ne, ei mel aliquando. Pro te tamquam nonumes, nam no nemore
+              epicurei</p>
+          </div>
+     
+        <form class="calcule form">
+          <div class="calcule-form-body">
+          <label for="number" class="visually-hidden">Height</label>
+          <input class="calcule-form-input input" id="height" type="number" placeholder="Height / cm">
+
+          <label for="weight" class="visually-hidden">Weight</label>
+          <input class="calcule-form-input input" id="weight" type="number" placeholder="Weight / kg">
+
+
+          <label for="age" class="visually-hidden">Age</label>
+          <input class="calcule-form-input input" id="age" type="number" placeholder="Age">
+
+          <label class="visually-hidden" for="gender">Gender</label>
+          <select name="" id="gender" class="calcule-input input">
+            <option value="" disabled selected>Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+
+          <label class="visually-hidden" for="activity-factor">Gender</label>
+          <select id="activity-factor" class="calcule-input input wide">
+            <option value="" disabled selected>Select an activity factor:</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+          </div>
+          <button class="calcule-btn button transparent" type="submit">Calculate</button>
+        </form>
+        </div>
+        <div class="calcule-table-wrapper">
+          <table class="calcule-table">
+            <thead>
+              <tr>
+                <th>BMI</th>
+                <th>Weight status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Below 18.5</td>
+                <td>Underweight</td>
+              </tr>
+              <tr>
+                <td>18.5 - 24.9</td>
+                <td>Healthy</td>
+              </tr>
+              <tr>
+                <td>25.0 - 29.9 </td>
+                <td>Overweight</td>
+              </tr>
+              <tr>
+                <td>30.0 - and Above</td>
+                <td>Obese</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2"><b>BMR</b>  Metabolic Rate / <b>BMI</b>  Body Mass Index</td>
+              </tr>
+            </tfoot>
+          </table>
+      </div>
+      </div>
     </section>
   </main>
