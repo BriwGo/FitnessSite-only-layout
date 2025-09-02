@@ -248,6 +248,14 @@ p:not([class]):not(:last-child) {
   translate: -50% 0;
 }
 
+.section-description {
+  font-size: clamp 14px, 1.042vw, 20px;
+  text-transform: uppercase;
+  color: var(--color-light);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 .header-menu-list {
   display: flex;
   flex-wrap: wrap;
@@ -525,14 +533,6 @@ p:not([class]):not(:last-child) {
   row-gap: 7px;
 }
 
-.join-us-form-subtitle {
-  font-size: clamp 14px, 1.042vw, 20px;
-  text-transform: uppercase;
-  color: var(--color-light);
-  text-align: center;
-  margin-bottom: 30px;
-}
-
 .join-us-form-subtitle:not(:last-child) {
   margin-bottom: 52px;
 }
@@ -578,6 +578,70 @@ p:not([class]):not(:last-child) {
   margin-bottom: 37px;
 }
 
+.family {
+  background-color: var(--color-dark-alternate);
+}
+
+.family-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 7px;
+  padding-top: 132px;
+  padding-bottom: 82px;
+  text-align: center;
+}
+
+.family-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 26px;
+       column-gap: 26px;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+}
+
+.family-image {
+  scroll-snap-align: start;
+}
+
+.calcule {
+  background-color: var(--color-dark-alternate);
+  padding-block: 146px;
+}
+
+.calcule-inner {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 36px;
+       column-gap: 36px;
+}
+
+.calcule-body {
+  flex-grow: 1;
+  max-width: 627px;
+}
+
+.calcule-title:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.calcule-description {
+  margin-bottom: 30px;
+  max-width: 385px;
+}
+
+.calcule-form-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 30px;
+}
+
+.calcule-form-body:not(:last-child) {
+  margin-bottom: 26px;
+}
+
 @media (max-width: 1919px) {
   .motivation-card-img {
     margin-block: -20px;
@@ -617,6 +681,9 @@ p:not([class]):not(:last-child) {
   .locate {
     display: flex;
     flex-direction: column-reverse;
+  }
+  .family-image {
+    height: 360px;
   }
 }
 @media (max-width: 767px) {
@@ -685,5 +752,16 @@ p:not([class]):not(:last-child) {
   }
   .locate-description:not(:last-child) {
     margin-bottom: 20px;
+  }
+  .family-image {
+    height: 180px;
+  }
+  .family-header {
+    padding-top: 80px;
+    padding-bottom: 50px;
+  }
+  .family-body {
+    -moz-column-gap: 12px;
+         column-gap: 12px;
   }
 }/*# sourceMappingURL=style.css.map */
