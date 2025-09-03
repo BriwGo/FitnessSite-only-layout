@@ -13,6 +13,9 @@
 </head>
 
 <body>
+  <div id="loader-wrapper">
+  <div class="loader"></div>
+</div>
   <header class="header">
     <a class="header-logo" href="/">
       <img class="header-logo-image" src="img/header-logo-kropp.png" alt="Kropp Logo" width="135" height="25"
@@ -78,7 +81,7 @@
 
     <section class="motivation">
       <ul class="motivation-list">
-        <li class="motivation-item">
+        <li class="motivation-item  animate-on-scroll">
           <div class="motivation-card container">
             <div class="motivation-card-body">
               <h2 class="motivation-card-title backdrop-title title-medium" data-title="Strong">
@@ -94,7 +97,7 @@
             <img width="518" height="760" alt="man on the gym" src="img/motivation1.jpg" class="motivation-card-img">
           </div>
         </li>
-        <li class="motivation-item">
+        <li class="motivation-item animate-on-scroll">
           <div class="motivation-card container">
             <div class="motivation-card-body">
               <h2 class="motivation-card-title backdrop-title title-medium" data-title="Start">
@@ -153,7 +156,7 @@
         <button class="join-us-play-button" type="button">Play</button>
       </div>
       <div class="join-us-body container">
-        <h2 class="join-us-title">JOIN US</h2>
+        <h2 class="join-us-title animate-on-scroll">JOIN US</h2>
         <form class="join-us-form">
           <header class="join-us-form-header">
             <h3 class="join-us-form-title title-big
@@ -174,7 +177,7 @@
         </form>
       </div>
     </section>
-    <section class="locate container-wide">
+    <section class="locate container-wide animate-on-scroll">
       <img src="img/locatemap.jpg" alt="branches on the map" class="locate-img" width="960" height="600">
       <div class="locate-body">
         <h2 class="locate-title title-medium backdrop-title centered" data-title="look">Find us near you</h2>
@@ -428,7 +431,55 @@
       </div>
     </div>
   </footer>
+  <script>
 
+function handleLoader() {
+  window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+  });
+}
+
+function handleScrollAnimations() {
+  const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  elementsToAnimate.forEach(element => {
+    observer.observe(element);
+  });
+}
+
+
+function handleSmoothScrolling() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  handleLoader();
+  handleScrollAnimations();
+  handleSmoothScrolling();
+});
+</script>
 </body>
 
 </html>
