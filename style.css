@@ -432,7 +432,7 @@ white-space: nowrap;
 }
 
 .banner-title {
-  font-size: clamp( 10px, 18.99vw, 365px);
+  font-size: min( 18.75vw, 365px);
   line-height: 1;
 }
 
